@@ -1,0 +1,35 @@
+ctrl + alt + Delete
+    exitprompt
+
+XF86PowerOff
+    exitprompt
+
+shift + Print
+    flameshot gui
+
+XF86Audio{Raise,Lower}Volume
+    changeVolume {+,-}5%
+
+XF86AudioMute
+    changeVolume toggle
+
+XF86AudioMicMute
+    pactl set-source-mute 1 toggle
+
+XF86MonBrightness{Up,Down}
+    changeBacklight {inc,dec}
+
+alt + x
+    $TERMINAL
+
+alt + b
+    $BROWSER
+
+ctrl + space
+    dunstctl close
+
+ctrl + shift + space
+    dunstctl close-all
+
+alt + c
+    compose

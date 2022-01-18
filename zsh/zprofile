@@ -1,0 +1,52 @@
+#!/bin/zsh
+
+# XDG Base Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# XDG User Directory
+export XDG_DESKTOP_DIR="/tmp"
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
+export XDG_TEMPLATES_DIR="/tmp"
+export XDG_PUBLICSHARE_DIR="/tmp"
+export XDG_DOCUMENTS_DIR="$HOME/files"
+export XDG_MUSIC_DIR="$HOME/files/music"
+export XDG_PICTURES_DIR="$HOME/files/pictures"
+export XDG_VIDEOS_DIR="$HOME/files/videos"
+
+# Custom paths
+export PATH="$PATH:$HOME/.local/bin/scripts"
+export PATH="$PATH:$HOME/.local/share/cargo/bin"
+export ACAD="$HOME/files/academics/bscs"
+
+# Default apps
+export EDITOR="nvim"
+export BROWSER="firefox"
+export TERMINAL="st"
+export TERM="st-256color"
+export READER="zathura"
+
+# XDG Configs
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export LESSHISTFILE=-
+export PYTHONHISTFILE="$XDG_CACHE_HOME/pythonhist"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal/conf"
+export CABAL_DIR="$XDG_CACHE_HOME/cabal"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
+
+# Autostart scripts
+transwrap
+
+if [[ "$(tty)" = "/dev/tty1" ]]; then
+    (pgrep dwm > /dev/null) || startx $XDG_CONFIG_HOME/xinitrc &> /dev/null
+fi
+
+setterm --cursor on
+[ -f $XDG_CONFIG_HOME/ttymaps.kmap ] && doas /sbin/loadkeys $XDG_CONFIG_HOME/ttymaps.kmap

@@ -1,0 +1,10 @@
+{
+  "coc.source.word.filetypes": ["markdown", "vimwiki", "groff", "html"],
+  "coc.source.emoji.filetypes": ["markdown", "vimwiki", "groff", "html", "javascript"],
+  "emmet.preferences": {
+      "format.noIndentTags": []
+  },
+  "coc.preferences.formatOnSaveFiletypes" : ["rust"],
+  "rust-analyzer.inlayHints.chainingHints": true,
+  "rust-analyzer.updates.checkOnStartup": false
+}

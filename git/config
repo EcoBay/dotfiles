@@ -1,0 +1,9 @@
+[credential]
+	helper = store --file $XDG_CONFIG_HOME/git/credentials
+[user]
+	name = EcoBay
+	email = ecobayod011903@gmail.com
+[alias]
+	graph = log --graph --all --oneline --decorate
+[init]
+	defaultBranch = main
